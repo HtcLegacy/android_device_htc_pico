@@ -1,0 +1,131 @@
+
+#
+# system.prop for pico
+#
+
+# Telephony
+rild.libpath=/system/lib/libhtc_ril.so
+rild.libargs=-d /dev/smd0
+ro.ril.hsdpa.category=8
+ro.ril.fast.dormancy.rule=1
+ril.subscription.types=NV,RUIM
+ro.telephony.ril_class=HTCQualcommRIL
+ro.telephony.ril.v3=datacallapn,signalstrength
+ro.telephony.default_network = 0
+DEVICE_PROVISIONED=1
+
+# For PDP overlap problem
+ro.ril.avoid.pdp.overlap = 1
+
+#For NITZ power saving mode
+ro.ril.enable.nitz = 3
+
+# For the agps default value
+ro.ril.def.agps.mode = 2
+
+# For HSDPA low throughput
+ro.ril.disable.power.collapse = 1
+
+# Modify MTU from 1500 to 1472 on 3G network
+ro.ril.set.mtusize = 1472
+ro.ril.set.mtu1472 = 1
+
+# Time between scans in seconds. Keep it high to minimize battery drain.
+# This only affects the case in which there are remembered access points,
+# but none are in range.
+wifi.supplicant_scan_interval=180
+wifi.interface=eth0
+wifi.softap.interface=eth0
+
+# density in DPI of the LCD of this board. This is used to scale the UI
+# appropriately. If this property is not defined, the default value is 160 dpi.
+ro.sf.lcd_density = 160
+
+# View configuration for QVGA
+view.fading_edge_length = 8
+view.touch_slop = 15
+view.minimum_fling_velocity = 25
+view.scroll_friction = 0.008
+
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number
+ro.opengles.version = 131072
+
+# For no auto focus devices
+ro.workaround.noautofocus = 1
+
+# Increase SKIA decode memory capability for progressive jpg file
+ro.media.dec.jpeg.memcap = 20000000
+
+# For QC perf binary hooks
+# src:vendor/qcom/proprietary/android-perf/release/lib/<CPU arch>/libqc-opt.so
+com.qc.hardware=true
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+dev.pm.dyn_samplingrate=1
+dev.pm.dyn_sample_period=700000
+
+# HTC Acoustic
+htc.audio.alc.enable = 1
+htc.audio.swalt.enable = 1
+
+# Display
+ro.hw_plat=7x27a
+ro.bq.gpu_to_cpu_unsupported=1
+ro.max.fling_velocity=4000
+com.qc.hdmi_out=false
+debug.camcorder.disablemeta=1
+debug.qctwa.statusbar=1
+debug.qctwa.preservebuf=1
+debug.gr.numframebuffers=3
+debug.qc.hardware=true
+debug.enabletr=false
+debug.hwui.render_dirty_regions=false
+debug.sf.hw=1
+debug.hwc.dynThreshold=1.9
+debug.fb.rgb565=0
+
+# Video Acceleration
+video.accelerate.hw=1
+debug.performance.tuning=1
+
+# Low Power Audio
+lpa.decode=false
+audio.decoder_override_check=true
+use.non-omx.mp3.decoder=true
+use.non-omx.aac.decoder=true
+
+# Media
+ro.media.enc.jpeg.quality=100
+media.stagefright.enable-player=true
+media.stagefright.enable-scan=true
+media.stagefright.enable-http=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-meta=false
+
+# Dalvik
+dalvik.vm.heapsize=48m
+ro.zram.default=0
+ro.sys.fw.bg_apps_limit=7
+sys.mem.max_hidden_apps=7
+dalvik.vm.checkjni=0
+dalvik.vm.checkjni=false
+dalvik.vm.dexopt-data-only=1
+dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.verify-bytecode=false
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.heaptargetutilization=0.25
+dalvik.vm.debug.alloc=0
+dalvik.vm.jit.codecachesize=0
+
+# Misc
+ro.use_data_netmgrd=true
+persist.data.ds_fmc_app.mode=0
+httplive.enable.discontinuity=true
+ro.config.sync=yes
+ro.phone_storage=0
+ro.kernel.android.checkjni=0
+ro.android.secure=0
+
