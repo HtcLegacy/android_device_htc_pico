@@ -54,7 +54,7 @@ PRODUCT_PACKAGES += \
     
 # Camera
 PRODUCT_PACKAGES += \
-    camera.default \
+    camera.msm7x27a \
     libsurfaceflinger_client
 
 # Video decoding
@@ -99,7 +99,7 @@ PRODUCT_COPY_FILES += \
     
 # Camera
 PRODUCT_COPY_FILES += \
-    vendor/htc/pico/proprietary/lib/hw/camera.default.so:system/lib/hw/camera.default.so \
+    device/htc/pico/prebuilt/lib/hw/vendor-camera.default.so:system/lib/hw/vendor-camera.default.so \
     vendor/htc/pico/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
     vendor/htc/pico/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
     vendor/htc/pico/proprietary/lib/libmmjpeg.so:obj/lib/libmmjpeg.so \
@@ -135,10 +135,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml 
-
-#Bluetooh
-PRODUCT_PACKAGES += \
-    brcm_patchram_plus
 
 # Wifi
 PRODUCT_COPY_FILES += \
@@ -177,7 +173,6 @@ PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     device/htc/pico/prebuilt/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
     vendor/htc/pico/proprietary/lib/libgsl.so:system/lib/libgsl.so \
-#    vendor/htc/pico/proprietary/lib/libllvm-arm.so:system/lib/libllvm-arm.so \
     vendor/htc/pico/proprietary/lib/libOpenCL.so:system/lib/libOpenCL.so \
     vendor/htc/pico/proprietary/lib/libOpenVG.so:system/lib/libOpenVG.so \
     vendor/htc/pico/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \

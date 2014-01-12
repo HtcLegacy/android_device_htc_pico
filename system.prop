@@ -81,8 +81,12 @@ debug.qc.hardware=true
 debug.enabletr=false
 debug.hwui.render_dirty_regions=false
 debug.sf.hw=1
-debug.hwc.dynThreshold=1.9
+debug.hwc.dynThreshold=1.91
 debug.fb.rgb565=0
+debug.egl.hw=1
+debug.sf.no_hw_vsync=1
+ro.zygote.disable_gl_preload=true
+debug.hwc.fakevsync=1
 
 # Video Acceleration
 video.accelerate.hw=1
@@ -128,4 +132,7 @@ ro.config.sync=yes
 ro.phone_storage=0
 ro.kernel.android.checkjni=0
 ro.android.secure=0
+ro.fuse_sdcard=true
+persist.sys.strictmode.visual=0
+persist.sys.strictmode.disable=1
 

@@ -288,30 +288,9 @@ service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
     oneshot
     disabled
 
-# Off-mode charging
-service charging /system/bin/charging
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-service zchgd_offmode /system/bin/zchgd -pseudooffmode
-    class main
-    user root
-    group root graphics
-    disabled
-
-service zchgd_onmode /system/bin/zchgd -onmode
-    class main
-    user root
-    group root graphics
-
-on property:dev.zcharge=true
-    start zchgd_onmode
-
-on property:dev.zcharge=false
-    stop zchgd_onmode
+on property:ro.fuse_sdcard=true
+   start sdcard
+   start fuse_sdcard0
 
 service flash_recovery /system/etc/install-recovery.sh
     class main
