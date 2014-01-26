@@ -1,8 +1,8 @@
 diff --git a/services/camera/libcameraservice/api1/CameraClient.cpp b/services/camera/libcameraservice/api1/CameraClient.cpp
-index d63eb3c..2ed9bbe 100644
+index afaf12a..772c952 100644
 --- a/services/camera/libcameraservice/api1/CameraClient.cpp
 +++ b/services/camera/libcameraservice/api1/CameraClient.cpp
-@@ -701,6 +701,7 @@ status_t CameraClient::sendCommand(int32_t cmd, int32_t arg1, int32_t arg2) {
+@@ -711,6 +711,7 @@ status_t CameraClient::sendCommand(int32_t cmd, int32_t arg1, int32_t arg2) {
          enableMsgType(CAMERA_MSG_STATS_DATA);
      } else if (cmd == CAMERA_CMD_HISTOGRAM_OFF) {
          disableMsgType(CAMERA_MSG_STATS_DATA);
@@ -10,7 +10,7 @@ index d63eb3c..2ed9bbe 100644
      } else if (cmd == CAMERA_CMD_METADATA_ON) {
          enableMsgType(CAMERA_MSG_META_DATA);
      } else if (cmd == CAMERA_CMD_METADATA_OFF) {
-@@ -708,6 +709,7 @@ status_t CameraClient::sendCommand(int32_t cmd, int32_t arg1, int32_t arg2) {
+@@ -718,6 +719,7 @@ status_t CameraClient::sendCommand(int32_t cmd, int32_t arg1, int32_t arg2) {
      } else if ( cmd == CAMERA_CMD_LONGSHOT_ON ) {
          mLongshotEnabled = true;
      } else if ( cmd == CAMERA_CMD_LONGSHOT_OFF ) {
