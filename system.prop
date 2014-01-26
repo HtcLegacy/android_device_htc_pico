@@ -73,7 +73,6 @@ ro.hw_plat=7x27a
 ro.bq.gpu_to_cpu_unsupported=1
 ro.max.fling_velocity=4000
 com.qc.hdmi_out=false
-debug.camcorder.disablemeta=1
 debug.qctwa.statusbar=1
 debug.qctwa.preservebuf=1
 debug.gr.numframebuffers=3
@@ -95,8 +94,8 @@ debug.performance.tuning=1
 # Low Power Audio
 lpa.decode=false
 audio.decoder_override_check=true
-use.non-omx.mp3.decoder=true
-use.non-omx.aac.decoder=true
+use.non-omx.mp3.decoder=false
+use.non-omx.aac.decoder=false
 
 # Media
 ro.media.enc.jpeg.quality=100
@@ -109,7 +108,7 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-meta=false
 
 # Dalvik
-dalvik.vm.heapsize=48m
+dalvik.vm.heapsize=64m
 ro.zram.default=0
 ro.sys.fw.bg_apps_limit=7
 sys.mem.max_hidden_apps=7

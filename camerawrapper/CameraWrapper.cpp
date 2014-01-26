@@ -85,7 +85,6 @@ static int check_vendor_module()
         return 0;
 
     rv = hw_get_module("vendor-camera", (const hw_module_t **)&gVendorModule);
-    //rv = hw_get_module_by_class("camera", "vendor", (const hw_module_t**)&gVendorModule);
     if (rv)
         ALOGE("failed to open vendor camera module");
     return rv;
