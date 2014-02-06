@@ -77,7 +77,7 @@ debug.qctwa.statusbar=1
 debug.qctwa.preservebuf=1
 debug.gr.numframebuffers=3
 debug.qc.hardware=true
-debug.enabletr=false
+debug.enabletr=true
 debug.hwui.render_dirty_regions=false
 debug.sf.hw=1
 debug.hwc.dynThreshold=1.91
@@ -86,6 +86,7 @@ debug.egl.hw=1
 debug.sf.no_hw_vsync=1
 ro.zygote.disable_gl_preload=true
 debug.hwc.fakevsync=1
+debug.egl.recordable.rgba8888=1
 
 # Video Acceleration
 video.accelerate.hw=1
@@ -110,7 +111,7 @@ media.stagefright.enable-meta=false
 # Dalvik
 dalvik.vm.heapsize=64m
 ro.zram.default=0
-ro.sys.fw.bg_apps_limit=7
+ro.sys.fw.bg_apps_limit=4
 sys.mem.max_hidden_apps=7
 dalvik.vm.checkjni=0
 dalvik.vm.checkjni=false
@@ -121,7 +122,6 @@ dalvik.vm.verify-bytecode=false
 dalvik.vm.lockprof.threshold=500
 dalvik.vm.heaptargetutilization=0.25
 dalvik.vm.debug.alloc=0
-dalvik.vm.jit.codecachesize=0
 
 # Misc
 ro.use_data_netmgrd=true

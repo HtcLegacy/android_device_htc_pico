@@ -231,10 +231,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     ro.telephony.call_ring.multiple=false \
-    ro.vold.umsdirtyratio=20 \
+    ro.vold.umsdirtyratio=50 \
     persist.sys.purgeable_assets=1 \
     ro.telephony.call_ring.delay=3000 \
-    ro.config.low_ram=true
+    ro.config.low_ram=true \
+    dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
 
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
