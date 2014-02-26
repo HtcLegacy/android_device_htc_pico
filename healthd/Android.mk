@@ -1,4 +1,5 @@
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2013 The Android Open Source Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +15,9 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),pico)
-include $(call all-makefiles-under,$(LOCAL_PATH))
-endif
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libhealthd.msm7x27a
+LOCAL_SRC_FILES := healthd_board_htc-msm7x27a.cpp
+LOCAL_C_INCLUDES := system/core/healthd
+include $(BUILD_STATIC_LIBRARY)

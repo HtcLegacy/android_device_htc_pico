@@ -1,4 +1,5 @@
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2013 The Android Open Source Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,17 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# AndroidBoard.mk is a legacy mechanism to deal with a few
-# edge-cases that can't be managed otherwise. No new rules
-# should be added to this file.
-#
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
+LOCAL_MODULE := libhealthd.msm7x27a
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+LOCAL_SRC_FILES := healthd_board_htc-msm7x27a.cpp
+LOCAL_C_INCLUDES := system/core/healthd
+include $(BUILD_STATIC_LIBRARY)
 
-# include the non-open-source counterpart to this file
--include vendor/htc/pico/AndroidBoardVendor.mk
+include $(BUILD_EXECUTABLE)
