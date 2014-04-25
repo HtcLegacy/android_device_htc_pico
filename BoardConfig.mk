@@ -111,21 +111,18 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/pico/bluetooth/include
 BOARD_EGL_CFG := device/htc/pico/prebuilt/lib/egl/egl.cfg
 
 # Wifi related definitions
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE := bcmdhd
-WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+WIFI_BAND := 802_11_ABG
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
-WIFI_DRIVER_FW_PATH_STA := "/system/etc/firmware/fw_bcm4330_b2.bin"
-WIFI_DRIVER_FW_PATH_AP := "/system/etc/firmware/fw_bcm4330_apsta_b2.bin"
-WIFI_DRIVER_FW_PATH_P2P := "/system/etc/firmware/fw_bcm4330_p2p_b2.bin"
 WIFI_DRIVER_MODULE_NAME := "bcmdhd"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/fw_bcm4330_b2.bin nvram_path=/proc/calibration iface_name=eth0"
-WIFI_BAND := 802_11_BG
-BOARD_LEGACY_NL80211_STA_EVENTS := true
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/firmware/fw_bcmdhd.bin nvram_path=/proc/calibration iface_name=wlan0"
+WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA := "/system/etc/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
 
 # Misc
 TARGET_BOOTANIMATION_PRELOAD := true
