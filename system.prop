@@ -83,9 +83,7 @@ debug.sf.hw=1
 debug.hwc.dynThreshold=1.91
 debug.fb.rgb565=0
 debug.egl.hw=1
-debug.sf.no_hw_vsync=1
 ro.zygote.disable_gl_preload=true
-debug.hwc.fakevsync=1
 debug.egl.recordable.rgba8888=1
 
 # Video Acceleration
