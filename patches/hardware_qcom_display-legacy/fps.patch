@@ -1,0 +1,15 @@
+diff --git a/libgralloc/framebuffer.cpp b/libgralloc/framebuffer.cpp
+index 2005540..448d290 100644
+--- a/libgralloc/framebuffer.cpp
++++ b/libgralloc/framebuffer.cpp
+@@ -314,8 +314,8 @@ int mapFrameBufferLocked(struct private_module_t* module)
+ 
+     float xdpi = (info.xres * 25.4f) / info.width;
+     float ydpi = (info.yres * 25.4f) / info.height;
+-    //The reserved[3] field is used to store FPS by the driver.
+-    float fps  = info.reserved[3] & 0xFF;
++    //The reserved[4] field is used to store FPS by the driver.
++    float fps  = info.reserved[4];
+ 
+     ALOGI("using (fd=%d)\n"
+           "id           = %s\n"
