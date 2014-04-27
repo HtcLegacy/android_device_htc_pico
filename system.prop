@@ -85,6 +85,8 @@ debug.fb.rgb565=0
 debug.egl.hw=1
 ro.zygote.disable_gl_preload=true
 debug.egl.recordable.rgba8888=1
+debug.gr.swapinterval=1
+debug.egl.swapinterval=1
 
 # Video Acceleration
 video.accelerate.hw=1
