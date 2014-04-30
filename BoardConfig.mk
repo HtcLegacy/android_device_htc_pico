@@ -176,7 +176,6 @@ BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
 BOARD_USES_PMEM_ADSP := true
 TARGET_DISABLE_ARM_PIE := true
 
-
 # Add h/w acceleration in browser
 ENABLE_WEBGL := true
 WITH_JIT := true
@@ -184,8 +183,11 @@ ENABLE_JSC_JIT := true
 JS_ENGINE := v8
 HTTP := chrome
 
+# Use Cpu Upload path (webkit)
+TARGET_FORCE_CPU_UPLOAD := true
+
 # Skip building external/chromium_org
-# PRODUCT_PREBUILT_WEBVIEWCHROMIUM := true
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := true
 
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
