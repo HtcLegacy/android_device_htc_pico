@@ -120,6 +120,7 @@ enum {
 	MDP_Y_CRCB_H1V1,  /* Y and CrCb, pseduo planer w/ Cr is in MSB */
 	MDP_Y_CBCR_H1V1,  /* Y and CbCr, pseduo planer w/ Cb is in MSB */
 	MDP_IMGTYPE_LIMIT,
+	MDP_RGB_BORDERFILL,	/* border fill pipe */
 	MDP_BGR_565 = MDP_IMGTYPE2_START,      /* BGR 565 planer */
 	MDP_FB_FORMAT,    /* framebuffer format */
 	MDP_IMGTYPE_LIMIT2 /* Non valid image type after this enum */
@@ -263,6 +264,7 @@ struct msmfb_data {
 struct msmfb_overlay_data {
 	uint32_t id;
 	struct msmfb_data data;
+	struct msmfb_data dst_data;
 #ifndef CONFIG_FB_MSM_OVERLAY_LEGACY
 	uint32_t version_key;
 	struct msmfb_data plane1_data;

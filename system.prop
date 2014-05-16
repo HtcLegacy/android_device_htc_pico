@@ -77,16 +77,13 @@ debug.qctwa.statusbar=1
 debug.qctwa.preservebuf=1
 debug.gr.numframebuffers=3
 debug.qc.hardware=true
-debug.enabletr=true
+debug.enabletr=false
 debug.hwui.render_dirty_regions=false
-debug.sf.hw=1
 debug.hwc.dynThreshold=1.91
 debug.fb.rgb565=0
-debug.egl.hw=1
 ro.zygote.disable_gl_preload=true
 debug.egl.recordable.rgba8888=1
-debug.gr.swapinterval=1
-debug.egl.swapinterval=1
+debug.gralloc.map_fb_memory=1
 
 # Video Acceleration
 video.accelerate.hw=1
