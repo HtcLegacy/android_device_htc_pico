@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Išplėstiniai nustatymai</string>
+    <string name="fast_charge_title">Priversti greitą krovimą</string>
+    <string name="fast_charge_summary">Tai leidžia naudotojui priversti pakrovimą iš bet kokio pakrovėjo aptikto kaip USB (pvz. automobilių pakrovėjai).</string>
+    <string name="sweep2wake_title">Velkti, kad pabusti (Sweep2Wake)</string>
+</resources>
