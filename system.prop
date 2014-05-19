@@ -69,6 +69,8 @@ htc.audio.alc.enable = 1
 htc.audio.swalt.enable = 1
 
 # Display
+debug.sf.hw=1
+debug.egl.hw=1
 ro.hw_plat=7x27a
 ro.bq.gpu_to_cpu_unsupported=1
 ro.max.fling_velocity=4000
