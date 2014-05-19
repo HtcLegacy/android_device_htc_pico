@@ -92,7 +92,6 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/htc/pico
 TARGET_KERNEL_CONFIG := pico_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 24
