@@ -211,6 +211,10 @@ PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/bin/bma150_usr:system/bin/bma150_usr \
     device/htc/pico/prebuilt/bin/htc_ebdlogd:system/bin/htc_ebdlogd \
     device/htc/pico/prebuilt/bin/logcat2:system/bin/logcat2 \
+	
+# DeviceSettings
+PRODUCT_PACKAGES += \
+ 	DeviceSettings	
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
