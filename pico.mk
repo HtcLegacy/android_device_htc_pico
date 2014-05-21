@@ -214,8 +214,9 @@ PRODUCT_COPY_FILES += \
 	
 # DeviceSettings
 PRODUCT_PACKAGES += \
- 	DeviceSettings	
-
+ 	DeviceSettings \
+ 	HALO
+        
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
