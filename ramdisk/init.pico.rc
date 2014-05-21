@@ -183,6 +183,12 @@ on fs
     
     # enable the GPS
     setprop ro.ril.def.agps.mode 2
+	
+    # sweep2wake and doubletap2wake toggle permissions
+    chown system system /sys/android_touch/s2wswitch
+    chmod 0664 /sys/android_touch/s2wswitch
+    chown system system /sys/android_touch/dt2wswitch
+    chmod 0664 /sys/android_touch/dt2wswitch
 
     # performance tweaks for flash
     write /sys/block/mtdblock3/bdi/read_ahead_kb 4
