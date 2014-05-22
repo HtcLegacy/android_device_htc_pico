@@ -170,6 +170,7 @@ on fs
 	mount yaffs2 mtd@cache /cache nosuid nodev
     # mount partitions
     mount_all /fstab.pico
+	swapon_all /fstab.pico
     
     # Enable low memory killer to check file pages
     write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,5120,5632,6144
@@ -180,6 +181,9 @@ on fs
     chmod 755 /data/system/appwidgets.xml
     chmod 755 /data/system/entropy.dat
     chmod 755 /data/system/wallpaper_info.xml
+	
+	## zRAM
+    write /proc/sys/vm/page-cluster 0
     
     # enable the GPS
     setprop ro.ril.def.agps.mode 2

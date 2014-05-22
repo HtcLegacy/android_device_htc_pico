@@ -7,4 +7,5 @@
 /dev/block/mtdblock4     /cache       yaffs2     nosuid,nodev,barrier=1                             wait,check
 /dev/block/mtdblock5     /data        yaffs2     nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
 
+/dev/block/zram0				none	swap	defaults	zramsize=50331648,swapprio=1
 /devices/platform/msm_sdcc.1/mmc_host/mmc0 auto auto defaults voldmanaged=sdcard0:auto,noemulatedsd
