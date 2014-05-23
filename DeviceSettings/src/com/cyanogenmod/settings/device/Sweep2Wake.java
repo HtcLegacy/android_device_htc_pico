@@ -8,7 +8,7 @@ import android.preference.PreferenceManager;
 
 public class Sweep2Wake {
 
-    private static final String FILE = "/sys/android_touch/sweep2wake";
+    private static final String FILE = "/sys/android_touch/s2wswitch";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);

@@ -8,7 +8,7 @@ import android.preference.PreferenceManager;
 
 public class DoubleTap2Wake {
 
-    private static final String FILE = "/sys/android_touch/doubletap2wake";
+    private static final String FILE = "/sys/android_touch/dt2wswitch";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
