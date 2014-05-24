@@ -69,12 +69,6 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
             else
                 FastCharge.disable(context);
             return true;
-        } else if (preference == mAllowStroke) {
-            if (mAllowStroke.isChecked())
-                AllowStroke.enable(context);
-            else
-                AllowStroke.disable(context);
-            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
