@@ -214,8 +214,7 @@ PRODUCT_COPY_FILES += \
 	
 # DeviceSettings
 PRODUCT_PACKAGES += \
- 	DeviceSettings \
- 	HALO
+ 	DeviceSettings
         
 # Keylayouts
 PRODUCT_COPY_FILES += \
