@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pengaturan Lanjutan</string>
+    <string name="fast_charge_title">Pengisian Daya Cepat</string>
+    <string name="fast_charge_summary">Fitur ini mengizinkan pengguna memaksa pengisian daya AC untuk pengisi daya apapun yang terdeteksi sebagai USB (mis. pengisi daya mobil).</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+</resources>

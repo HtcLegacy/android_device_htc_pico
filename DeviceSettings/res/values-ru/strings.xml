@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Продвинутые настройки</string>
+    <string name="fast_charge_title">Fast Charge</string>
+    <string name="fast_charge_summary">Любое зарядное устройство, определённое как USB, теперь будет определено как обычное. (напр. машинные зарядки).</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+</resources>

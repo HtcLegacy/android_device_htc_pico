@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">إعدادات متقدمة</string>
+    <string name="fast_charge_title">فرض الشحن السريع</string>
+    <string name="fast_charge_summary">هذا الخيار يسمح للمستخدم فرض التعامل مع أي شاحن كشاحن تيار متردد حين يتم الكشف عنه كشاحن USB (مثل العديد من شواحن السيارات).</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+</resources>

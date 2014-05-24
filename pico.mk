@@ -211,6 +211,10 @@ PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/bin/htc_ebdlogd:system/bin/htc_ebdlogd \
     device/htc/pico/prebuilt/bin/logcat2:system/bin/logcat2 \
 
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    DeviceSettings	
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \

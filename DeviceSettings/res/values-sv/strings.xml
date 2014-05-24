@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Avancerade Inställningar</string>
+    <string name="fast_charge_title">Forcera Snabbladdning</string>
+    <string name="fast_charge_summary">Denna funktion ger användaren möjlighet att AC-ladda med alla typer av laddare som upptäcks som USB (bl.a. många billaddare.)</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+</resources>

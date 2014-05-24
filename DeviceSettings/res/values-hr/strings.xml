@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Napredne postavke</string>
+    <string name="fast_charge_title">Prisilno brzo punjenje</string>
+    <string name="fast_charge_summary">Omogućuje korisniku da prisili AC punjenje za bilo koji izvor ako je prepoznat kao USB (npr. mnogi auto punjači).</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+</resources>

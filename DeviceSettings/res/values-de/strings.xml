@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Erweiterte Einstellungen</string>
+    <string name="fast_charge_title">Erzwinge Schnellaufladung</string>
+    <string name="fast_charge_summary">Erlaubt das Laden des Akkus mit maximal möglicher Leistung auch über USB-Anschlüsse.</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+</resources>
