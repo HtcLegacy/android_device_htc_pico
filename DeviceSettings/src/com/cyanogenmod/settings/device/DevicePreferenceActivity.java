@@ -32,22 +32,12 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
 
     public static final String KEY_FAST_CHARGE = "fast_charge";
     public static final String KEY_SWEEP2WAKE = "sweep2wake";
-    public static final String KEY_ALLOW_STROKE = "s2w_allow_stroke";
-    public static final String KEY_MIN_DISTANCE = "s2w_min_distance";
-    public static final String KEY_REGISTER_THRESHOLD = "s2w_register_threshold";
     public static final String KEY_DOUBLETAP2WAKE = "doubletap2wake";
-    public static final String KEY_MIN_DURATION = "dt2w_min_duration";
-    public static final String KEY_MAX_DURATION = "dt2w_max_duration";
 
     private Context context;
     private CheckBoxPreference mFastCharge;
     private SwitchPreference mSweep2Wake;
-    private CheckBoxPreference mAllowStroke;
-    private SeekBarPreference mMinDistance;
-    private SeekBarPreference mRegisterThreshold;
     private SwitchPreference mDoubleTap2Wake;
-    private SeekBarPreference mMinDuration;
-    private SeekBarPreference mMaxDuration;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,30 +55,10 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
         mSweep2Wake.setEnabled(Sweep2Wake.isSupported());
         mSweep2Wake.setOnPreferenceChangeListener(this);
 
-        mAllowStroke = (CheckBoxPreference) findPreference(KEY_ALLOW_STROKE);
-        mAllowStroke.setChecked(AllowStroke.isEnabled());
-        mAllowStroke.setEnabled(AllowStroke.isSupported());
-
-        mMinDistance = (SeekBarPreference) findPreference(KEY_MIN_DISTANCE);
-        mMinDistance.setValue(MinDistance.getValue());
-        mMinDistance.setOnPreferenceChangeListener(this);
-
-        mRegisterThreshold = (SeekBarPreference) findPreference(KEY_REGISTER_THRESHOLD);
-        mRegisterThreshold.setValue(RegisterThreshold.getValue());
-        mRegisterThreshold.setOnPreferenceChangeListener(this);
-
         mDoubleTap2Wake = (SwitchPreference) findPreference(KEY_DOUBLETAP2WAKE);
         mDoubleTap2Wake.setChecked(DoubleTap2Wake.isEnabled());
         mDoubleTap2Wake.setEnabled(DoubleTap2Wake.isSupported());
         mDoubleTap2Wake.setOnPreferenceChangeListener(this);
-
-        mMinDuration = (SeekBarPreference) findPreference(KEY_MIN_DURATION);
-        mMinDuration.setValue(MinDuration.getValue());
-        mMinDuration.setOnPreferenceChangeListener(this);
-
-        mMaxDuration = (SeekBarPreference) findPreference(KEY_MAX_DURATION);
-        mMaxDuration.setValue(MaxDuration.getValue());
-        mMaxDuration.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -117,28 +87,12 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
             else
                 Sweep2Wake.disable(context);
             return true;
-        } else if (preference == mMinDistance) {
-            int distance = ((Integer)newValue).intValue();
-            MinDistance.setValue(context, distance);
-            return true;
-        } else if (preference == mRegisterThreshold) {
-            int distance = ((Integer)newValue).intValue();
-            RegisterThreshold.setValue(context, distance);
-            return true;
         } else if (preference == mDoubleTap2Wake) {
             boolean value = ((Boolean)newValue).booleanValue();
             if (value)
                 DoubleTap2Wake.enable(context);
             else
                 DoubleTap2Wake.disable(context);
-            return true;
-        } else if (preference == mMinDuration) {
-            int duration = ((Integer)newValue).intValue();
-            MinDuration.setValue(context, duration);
-            return true;
-        } else if (preference == mMaxDuration) {
-            int duration = ((Integer)newValue).intValue();
-            MaxDuration.setValue(context, duration);
             return true;
         }
         return false;
