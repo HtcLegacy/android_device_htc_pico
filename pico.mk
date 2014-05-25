@@ -213,7 +213,11 @@ PRODUCT_COPY_FILES += \
 
 # DeviceSettings
 PRODUCT_PACKAGES += \
-    DeviceSettings	
+    DeviceSettings
+
+#Int2Ext
+PRODUCT_COPY_FILES += \
+    device/htc/pico/prebuilt/etc/40int2ext:system/etc/40int2ext
 
 # Keylayouts
 PRODUCT_COPY_FILES += \

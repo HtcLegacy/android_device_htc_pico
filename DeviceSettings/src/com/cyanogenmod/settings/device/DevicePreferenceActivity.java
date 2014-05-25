@@ -31,6 +31,7 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
     public static final String KEY_FAST_CHARGE = "fast_charge";
+    public static final String KEY_INT2EXT = "int2ext";
     public static final String KEY_SWEEP2WAKE = "sweep2wake";
     public static final String KEY_ALLOW_STROKE = "s2w_allow_stroke";
     public static final String KEY_MIN_DISTANCE = "s2w_min_distance";
@@ -41,6 +42,7 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
 
     private Context context;
     private CheckBoxPreference mFastCharge;
+    private CheckBoxPreference mInt2Ext;
     private SwitchPreference mSweep2Wake;
     private CheckBoxPreference mAllowStroke;
     private SeekBarPreference mMinDistance;
@@ -59,6 +61,11 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
         mFastCharge = (CheckBoxPreference) findPreference(KEY_FAST_CHARGE);
         mFastCharge.setChecked(FastCharge.isEnabled());
         mFastCharge.setEnabled(FastCharge.isSupported());
+
+        mInt2Ext = (CheckBoxPreference) findPreference(KEY_INT2EXT);
+        mInt2Ext.setChecked(Int2Ext.isEnabled());
+        mInt2Ext.setEnabled(Int2Ext.isSupported());
+        mInt2Ext.setOnPreferenceChangeListener(this);
 
         mSweep2Wake = (SwitchPreference) findPreference(KEY_SWEEP2WAKE);
         mSweep2Wake.setChecked(Sweep2Wake.isEnabled());
@@ -140,6 +147,12 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
             int duration = ((Integer)newValue).intValue();
             MaxDuration.setValue(context, duration);
             return true;
+        } else if (preference == mInt2Ext) {
+            boolean value = ((Boolean)newValue).booleanValue();
+            if (value)
+                Int2Ext.enable(context);
+            else
+                Int2Ext.disable(context);
         }
         return false;
     }
