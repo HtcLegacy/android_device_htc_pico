@@ -11,6 +11,11 @@
             android:title="@string/fast_charge_title"
             android:summary="@string/fast_charge_summary"
             android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="int2ext"
+            android:title="@string/int2ext_title"
+            android:summary="@string/int2ext_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <!-- Sweep2Wake -->
