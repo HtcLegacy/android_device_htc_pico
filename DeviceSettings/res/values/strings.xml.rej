@@ -1,9 +1,0 @@
---- DeviceSettings/res/values/strings.xml
-+++ DeviceSettings/res/values/strings.xml
-@@ -22,4 +22,6 @@
-     <string name="dt2w_min_duration_summary">Adjust minimum duration</string>
-     <string name="dt2w_max_duration_title">Maximum tap duration</string>
-     <string name="dt2w_max_duration_summary">Adjust maximum duration</string>
-+    <string name="int2ext_title">Enable int2ext</string>
-+    <string name="int2ext_summary">Moves apps and data into sd-ext (requires reboot)\n\nThis cannot be disabled later!</string>
- </resources>
