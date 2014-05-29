@@ -6,6 +6,8 @@
     <string name="category_doubletap2wake_title">DoubleTap2Wake</string>
     <string name="fast_charge_title">Force fast charge</string>
     <string name="fast_charge_summary">Force AC charging for any charger that is detected as USB (e.g. many car chargers).</string>
+    <string name="int2ext_title">Enable int2ext</string>
+    <string name="int2ext_summary">Moves apps and data into sd-ext (requires reboot)\n\nThis cannot be disabled later!</string>
     <string name="sweep2wake_title">Sweep2Wake</string>
     <string name="sweep2wake_summaryOn">Sweep2Wake enabled</string>
     <string name="sweep2wake_summaryOff">Sweep2Wake disabled</string>
