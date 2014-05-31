@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011 The Android Open Source Project
- * Copyright (c) 2012, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +90,6 @@ static void ap_set_phone_state(struct audio_policy *pol, audio_mode_t state)
     qap->apm->setPhoneState(state);
 }
 
-    /* indicate a change in ringer mode */
     /* force using a specific device category for the specified usage */
 static void ap_set_force_use(struct audio_policy *pol,
                           audio_policy_force_use_t usage,
@@ -364,7 +362,6 @@ static bool ap_is_offload_supported(const struct audio_policy *pol,
     const struct qcom_audio_policy *qap = to_cqap(pol);
     return qap->apm->isOffloadSupported(*info);
 }
-
 
 static int create_qcom_ap(const struct audio_policy_device *device,
                             struct audio_policy_service_ops *aps_ops,
