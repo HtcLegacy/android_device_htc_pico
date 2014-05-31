@@ -96,6 +96,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.pico:root/fstab.pico \
     $(LOCAL_PATH)/ramdisk/init.pico.rc:root/init.pico.rc \
+	$(LOCAL_PATH)/ramdisk/init.swapart.rc:root/init.swapart.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.pico.rc:root/ueventd.pico.rc \
     $(LOCAL_PATH)/ramdisk/init.pico.usb.rc:root/init.pico.usb.rc
     
@@ -219,7 +220,11 @@ PRODUCT_PACKAGES += \
 # Int2ext
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/etc/40int2ext:system/etc/40int2ext 	
-        
+
+# swapart binary
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/swapart:system/bin/swapart	
+	
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \

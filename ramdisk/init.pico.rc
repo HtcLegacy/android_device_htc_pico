@@ -1,4 +1,5 @@
 import init.pico.usb.rc
+import init.swapart.rc
 
 on init
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
