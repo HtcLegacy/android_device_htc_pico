@@ -1,24 +1,12 @@
 # Copyright 2011 The Android Open Source Project
-
-#AUDIO_POLICY_TEST := true
-#ENABLE_AUDIO_DUMP := true
-
 ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),pico)
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
+    AudioHardware.cpp \
     audio_hw_hal.cpp \
     HardwarePinSwitching.c
-
-TARGET_HAS_QACT := false
-ifeq ($(TARGET_HAS_QACT),true)
-LOCAL_SRC_FILES += \
-    AudioHardware_cad.cpp
-else
-LOCAL_SRC_FILES += \
-    AudioHardware.cpp
-endif
 
 ifeq ($(BOARD_HAVE_BLUETOOTH),true)
   LOCAL_CFLAGS += -DWITH_A2DP
@@ -53,13 +41,6 @@ ifneq ($(TARGET_SIMULATOR),true)
 LOCAL_SHARED_LIBRARIES += libdl
 endif
 
-ifeq ($(TARGET_HAS_QACT),true)
-LOCAL_SHARED_LIBRARIES += libaudcal
-    LOCAL_CFLAGS += -DTARGET_HAS_QACT
-	# hack for prebuilt
-	$(shell mkdir -p $(OUT)/obj/SHARED_LIBRARIES/libaudcal_intermediates/)
-	$(shell touch $(OUT)/obj/SHARED_LIBRARIES/libaudcal_intermediates/export_includes)
-endif
 LOCAL_STATIC_LIBRARIES := \
     libmedia_helper \
     libaudiohw_legacy
@@ -72,7 +53,6 @@ LOCAL_CFLAGS += -fno-short-enums
 
 LOCAL_C_INCLUDES := $(TARGET_OUT_HEADERS)/mm-audio/audio-alsa
 ifeq ($(TARGET_HAS_QACT),true)
-LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/mm-audio/audcal
 endif
 LOCAL_C_INCLUDES += hardware/libhardware/include
 LOCAL_C_INCLUDES += hardware/libhardware_legacy/include
@@ -108,7 +88,6 @@ LOCAL_MODULE_TAGS := optional
 ifeq ($(BOARD_HAVE_BLUETOOTH),true)
   LOCAL_CFLAGS += -DWITH_A2DP
 endif
-
 
 LOCAL_C_INCLUDES := hardware/libhardware_legacy/audio
 
