@@ -4,6 +4,7 @@
     <string name="category_general_title">General</string>
     <string name="category_sweep2wake_title">Sweep2Wake</string>
     <string name="category_doubletap2wake_title">DoubleTap2Wake</string>
+	<string name="category_performance_title">Performance</string>
     <string name="fast_charge_title">Force fast charge</string>
     <string name="fast_charge_summary">Force AC charging for any charger that is detected as USB (e.g. many car chargers).</string>
     <string name="int2ext_title">Enable int2ext</string>
@@ -14,4 +15,12 @@
     <string name="doubletap2wake_title">DoubleTap2Wake</string>
     <string name="doubletap2wake_summaryOn">DoubleTap2Wake enabled</string>
     <string name="doubletap2wake_summaryOff">DoubleTap2Wake disabled</string>
+    <string name="low_ram_title">Low RAM Switch</string>
+    <string name="low_ram_summary_on">Low RAM is enabled, large-RAM features are disabled</string>
+    <string name="low_ram_summary_off">Low RAM is disabled, large-RAM features are enabled</string>
+    <string name="low_ram_error">Impossible to set LowRam setting, please grant the root permissions for this app.</string>
+    <string name="low_ram_reboot_alert">To apply the setting, a reboot is required.\nWould you like to reboot now?\n\nPress Yes to reboot now, No if you prefer to reboot later.</string>
+    <string name="low_ram_reboot_wait">The device will be rebooted in %1$d seconds, please wait.</string>
+    <string name="low_ram_reboot_yes">Yes</string>
+    <string name="low_ram_reboot_no">No</string>
 </resources>

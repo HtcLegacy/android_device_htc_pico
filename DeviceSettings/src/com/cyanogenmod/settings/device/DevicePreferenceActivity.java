@@ -34,12 +34,14 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
     public static final String KEY_INT2EXT = "int2ext";
     public static final String KEY_SWEEP2WAKE = "sweep2wake";
     public static final String KEY_DOUBLETAP2WAKE = "doubletap2wake";
+	public static final String KEY_LOW_RAM = "lowram";
 
     private Context context;
     private CheckBoxPreference mFastCharge;
     private CheckBoxPreference mInt2Ext;
     private SwitchPreference mSweep2Wake;
     private SwitchPreference mDoubleTap2Wake;
+	private CheckBoxPreference mLowRamStatus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,11 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
         mDoubleTap2Wake.setChecked(DoubleTap2Wake.isEnabled());
         mDoubleTap2Wake.setEnabled(DoubleTap2Wake.isSupported());
         mDoubleTap2Wake.setOnPreferenceChangeListener(this);
+		
+		mLowRamStatus = (CheckBoxPreference) findPreference(DeviceSettings.KEY_LOW_RAM);
+		mDoubleTap2Wake.setChecked(DoubleTap2Wake.isEnabled());
+        mLowRamStatus.setEnabled(LowRam.isSupported());
+        mLowRamStatus.setOnPreferenceChangeListener(new LowRam());
     }
 
     @Override
@@ -100,8 +107,15 @@ public class DevicePreferenceActivity extends PreferenceFragment implements
             if (value)
                 Int2Ext.enable(context);
             else
-                Int2Ext.disable(context);
+                Int2Ext.disable(context);          		
+        } else if (preference == mLowRamStatus) {
+		    boolean value = ((Boolean)newValue).booleanValue();
+			if (value)
+                LowRam.enable(context);
+			else
+                LowRam.disable(context);
         }
+		
         return false;
     }
 }

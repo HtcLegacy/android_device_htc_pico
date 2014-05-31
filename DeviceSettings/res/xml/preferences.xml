@@ -3,7 +3,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.cyanogenmod.settings.device"
     android:title="@string/app_name">
 
-    <!-- General features -->
+    <!-- Fastcharge -->
     <PreferenceCategory android:key="category_general"
         android:title="@string/category_general_title">
         <CheckBoxPreference
@@ -11,11 +11,23 @@
             android:title="@string/fast_charge_title"
             android:summary="@string/fast_charge_summary"
             android:defaultValue="false" />
+			
+	<!-- Memory-Increasing -->		
         <CheckBoxPreference
             android:key="int2ext"
             android:title="@string/int2ext_title"
             android:summary="@string/int2ext_summary"
             android:defaultValue="false" />
+    </PreferenceCategory>
+	
+	<!-- Performance -->
+    <PreferenceCategory android:title="@string/category_performance_title" >
+        <CheckBoxPreference
+            android:key="low_ram"
+            android:title="@string/low_ram_title"
+            android:summaryOn="@string/low_ram_summary_on"
+            android:summaryOff="@string/low_ram_summary_off"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
     <!-- Sweep2Wake -->
