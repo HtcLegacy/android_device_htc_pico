@@ -249,7 +249,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=64m \
     dalvik.vm.heaptargetutilization=0.25 \
     dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=2m
+    dalvik.vm.heapmaxfree=2m \
+    ro.com.android.mobiledata=false \
+    ro.com.android.dataroaming=false
 
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
