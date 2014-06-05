@@ -83,6 +83,7 @@ debug.enabletr=false
 debug.hwui.render_dirty_regions=false
 debug.hwc.dynThreshold=1.91
 debug.fb.rgb565=0
+debug.gralloc.map_fb_memory=1
 ro.zygote.disable_gl_preload=true
 debug.egl.recordable.rgba8888=1
 
@@ -114,7 +115,6 @@ sys.mem.max_hidden_apps=7
 dalvik.vm.checkjni=0
 dalvik.vm.checkjni=false
 dalvik.vm.dexopt-data-only=1
-dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.verify-bytecode=false
 dalvik.vm.lockprof.threshold=500

@@ -26,7 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
     gralloc.msm7x27a \
-	hwcomposer.msm7x27a \
     memtrack.msm7x27a \
     libgenlock \
     liboverlay \
@@ -248,7 +247,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=50 \
     persist.sys.purgeable_assets=1 \
     ro.telephony.call_ring.delay=3000 \
-    ro.config.low_ram=true \
+    ro.config.low_ram=false \
     dalvik.vm.heapstartsize=5m \
     dalvik.vm.heapgrowthlimit=48m \
     dalvik.vm.heapsize=64m \
