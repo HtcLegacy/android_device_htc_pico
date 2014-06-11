@@ -69,6 +69,7 @@
 #define MSMFB_MDP_PP _IOWR(MSMFB_IOCTL_MAGIC, 156, struct msmfb_mdp_pp)
 #define MSMFB_OVERLAY_VSYNC_CTRL _IOW(MSMFB_IOCTL_MAGIC, 160, unsigned int)
 #define MSMFB_VSYNC_CTRL  _IOW(MSMFB_IOCTL_MAGIC, 161, unsigned int)
+#define MSMFB_BUFFER_SYNC  _IOW(MSMFB_IOCTL_MAGIC, 162, struct mdp_buf_sync)
 #define MSMFB_DISPLAY_COMMIT _IOW(MSMFB_IOCTL_MAGIC, 164, struct mdp_display_commit)
 
 #define MSMFB_GET_USB_PROJECTOR_INFO _IOR(MSMFB_IOCTL_MAGIC, 301, struct msmfb_usb_projector_info)
@@ -122,6 +123,10 @@ enum {
 	MDP_YCRCB_H1V1,   
 	MDP_YCBCR_H1V1,   
 	MDP_BGR_565,      
+	MDP_BGR_888,
+	MDP_Y_CBCR_H2V2_VENUS,
+	MDP_BGRX_8888,
+	MDP_YCBYCR_H2V1,
 	MDP_IMGTYPE_LIMIT,
 	MDP_RGB_BORDERFILL,	
 	MDP_FB_FORMAT = MDP_IMGTYPE2_START,    
@@ -169,7 +174,7 @@ enum {
 #define MDP_DEINTERLACE_ODD		0x00400000
 #define MDP_OV_PLAY_NOWAIT		0x00200000
 #define MDP_SOURCE_ROTATED_90		0x00100000
-#define MDP_DPP_HSIC			0x00080000
+#define MDP_OVERLAY_PP_CFG_EN		0x00080000
 #define MDP_BACKEND_COMPOSITION		0x00040000
 #define MDP_BORDERFILL_SUPPORTED	0x00010000
 #define MDP_SECURE_OVERLAY_SESSION      0x00008000
@@ -282,6 +287,14 @@ struct dpp_ctrl {
 	int8_t hsic_params[NUM_HSIC_PARAM];
 };
 
+enum {
+	BLEND_OP_NOT_DEFINED = 0,
+	BLEND_OP_OPAQUE,
+	BLEND_OP_PREMULTIPLIED,
+	BLEND_OP_COVERAGE,
+	BLEND_OP_MAX,
+};
+
 struct mdp_overlay {
 	struct msmfb_img src;
 	struct mdp_rect src_rect;
@@ -290,6 +303,7 @@ struct mdp_overlay {
 	uint32_t is_fg;		
 	uint32_t alpha;
 	uint32_t transp_mask;
+	uint32_t blend_op;
 	uint32_t flags;
 	uint32_t id;
 	uint32_t user_data[8];
@@ -320,6 +334,14 @@ struct mdp_histogram {
 };
 
 #define MDP_MAX_FENCE_FD	10
+#define MDP_BUF_SYNC_FLAG_WAIT 	1
+
+struct mdp_buf_sync {
+	uint32_t flags;
+	uint32_t acq_fen_fd_cnt;
+	int *acq_fen_fd;
+	int *rel_fen_fd;
+};
 
 struct mdp_buf_fence {
 	uint32_t flags;
