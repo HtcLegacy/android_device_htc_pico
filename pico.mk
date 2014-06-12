@@ -179,6 +179,7 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libC2D2.so:system/vendor/lib/libC2D2.so \
     vendor/htc/pico/proprietary/lib/libc2d2_z180.so:system/vendor/lib/libc2d2_z180.so \
     vendor/htc/pico/proprietary/lib/libCB.so:system/vendor/lib/libCB.so \
+    vendor/htc/pico/proprietary/lib/libadreno_utils.so:system/vendor/lib/libadreno_utils.so \
     vendor/htc/pico/proprietary/lib/egl/eglsubAndroid.so:system/vendor/lib/egl/eglsubAndroid.so \
     vendor/htc/pico/proprietary/lib/egl/libEGL_adreno.so:system/vendor/lib/egl/libEGL_adreno.so \
     vendor/htc/pico/proprietary/lib/egl/libGLESv1_CM_adreno.so:system/vendor/lib/egl/libGLESv1_CM_adreno.so \
