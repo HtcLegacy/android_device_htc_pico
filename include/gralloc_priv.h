@@ -37,18 +37,18 @@ enum {
     /* gralloc usage bits indicating the type
      * of allocation that should be used */
 
-    /* SYSTEM heap comes from kernel vmalloc,
-     * can never be uncached, is not secured*/
-    GRALLOC_USAGE_PRIVATE_SYSTEM_HEAP     =       GRALLOC_USAGE_PRIVATE_0,
+    /* ADSP heap is a carveout heap, is not secured*/
+    GRALLOC_USAGE_PRIVATE_ADSP_HEAP       =       GRALLOC_USAGE_PRIVATE_0,
     /* SF heap is used for application buffers, is not secured */
     GRALLOC_USAGE_PRIVATE_UI_CONTIG_HEAP  =       GRALLOC_USAGE_PRIVATE_1,
-    /* IOMMU heap comes from manually allocated pages,
-     * can be cached/uncached, is not secured */
-    GRALLOC_USAGE_PRIVATE_IOMMU_HEAP      =       GRALLOC_USAGE_PRIVATE_2,
+    /* SYSTEM heap comes from kernel vmalloc,
+     * can never be uncached, is not secured*/
+    GRALLOC_USAGE_PRIVATE_SYSTEM_HEAP      =      GRALLOC_USAGE_PRIVATE_2,
     /* MM heap is a carveout heap for video, can be secured*/
     GRALLOC_USAGE_PRIVATE_MM_HEAP         =       GRALLOC_USAGE_PRIVATE_3,
-    /* ADSP heap is a carveout heap, is not secured*/
-    GRALLOC_USAGE_PRIVATE_ADSP_HEAP       =       0x01000000,
+    /* IOMMU heap comes from manually allocated pages,
+     * can be cached/uncached, is not secured */
+    GRALLOC_USAGE_PRIVATE_IOMMU_HEAP      =       0x01000000,
 
     /* Set this for allocating uncached memory (using O_DSYNC)
      * cannot be used with noncontiguous heaps */
