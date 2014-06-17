@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/aosp.mk \
     $(LOCAL_DIR)/pico.mk
