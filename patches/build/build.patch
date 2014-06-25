@@ -7,7 +7,7 @@ index a5cc21c..a9ba39b 100644
          x86) toolchaindir=x86/i686-linux-android-$targetgccversion/bin
              ;;
 -        arm) toolchaindir=arm/arm-linux-androideabi-$targetgccversion/bin
-+        arm) toolchaindir=arm/linaro-4.8/bin
++        arm) toolchaindir=arm/linaro-4.9/bin
              ;;
          mips) toolchaindir=mips/mipsel-linux-android-$targetgccversion/bin
              ;;
