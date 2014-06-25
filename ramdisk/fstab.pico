@@ -2,10 +2,10 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-#<src>              <mnt_point>  <type>   <mnt_flags and options>                            <fs_mgr_flags>
-/dev/block/mtdblock3     /system      yaffs2     ro,barrier=1                                       wait
-/dev/block/mtdblock4     /cache       yaffs2     nosuid,nodev,barrier=1                             wait,check
-/dev/block/mtdblock5     /data        yaffs2     nosuid,nodev,noauto_da_alloc,barrier=1             wait,check
+#<src>                 <mnt_point>    <type>     <mnt_flags and options>                                                                          <fs_mgr_flags>
+/dev/block/mtdblock3     /system      yaffs2     ro,barrier=1                                                                                     wait
+/dev/block/mtdblock4     /cache       yaffs2     noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc,journal_async_commit,errors=panic    wait,check
+/dev/block/mtdblock5     /data        yaffs2     noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc,journal_async_commit,errors=panic    wait,check
 
-/dev/block/zram0				none	swap	defaults	zramsize=50331648,swapprio=1
+#/dev/block/zram0				none	swap	defaults	zramsize=50331648,swapprio=1
 /devices/platform/msm_sdcc.1/mmc_host/mmc0 auto auto defaults voldmanaged=sdcard0:auto,noemulatedsd
