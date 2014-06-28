@@ -246,7 +246,7 @@ mDirectOutrefCnt(0)
 
     audcal_initialize();
 
-    char fluence_key[20] = "none";
+    char fluence_key[PROPERTY_VALUE_MAX] = "none";
     property_get("ro.qc.sdk.audio.fluencetype",fluence_key,"0");
 
     if (0 == strncmp("fluencepro", fluence_key, sizeof("fluencepro"))) {
@@ -438,7 +438,7 @@ AudioStreamIn* AudioHardware::openInputStream(
 
     mLock.lock();
 #ifdef QCOM_VOIP_ENABLED
-    if(devices == AUDIO_DEVICE_IN_COMMUNICATION) {
+    if((devices == AUDIO_DEVICE_IN_COMMUNICATION) && (*sampleRate == 8000)) {
         ALOGV("Create Audio stream Voip \n");
         AudioStreamInVoip* inVoip = new AudioStreamInVoip();
         status_t lStatus = NO_ERROR;
@@ -2208,9 +2208,11 @@ status_t AudioHardware::AudioStreamOutDirect::set(
 
         // check values
         if ((lFormat != format()) ||
-            (lChannels != channels())) {
+            (lChannels != channels()) ||
+			(lRate != sampleRate())) {
             if (pFormat) *pFormat = format();
             if (pChannels) *pChannels = channels();
+			if (pRate) *pRate = sampleRate();
             ALOGE("  AudioStreamOutDirect::set return bad values\n");
             return BAD_VALUE;
         }
@@ -3040,7 +3042,8 @@ void* AudioHardware::AudioSessionOutLPA::memBufferAlloc(int nSize, int32_t *ion_
 
     alloc_data.len =   nSize;
     alloc_data.align = 0x1000;
-    alloc_data.flags = ION_HEAP(ION_AUDIO_HEAP_ID);
+    alloc_data.heap_mask = ION_HEAP(ION_AUDIO_HEAP_ID);
+    alloc_data.flags = 0;
     int rc = ioctl(ionfd, ION_IOC_ALLOC, &alloc_data);
     if (rc) {
         ALOGE("ION_IOC_ALLOC ioctl failed\n");
