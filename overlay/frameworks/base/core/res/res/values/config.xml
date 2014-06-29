@@ -186,7 +186,7 @@
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
     <!-- The default iface on which to monitor data use -->
-    <string name="config_datause_iface">rmnet1</string>
+    <string name="config_datause_iface">rmnet0</string>
 
     <!-- Fade off animation when turning off screen -->
     <bool name="config_animateScreenLights">false</bool>
