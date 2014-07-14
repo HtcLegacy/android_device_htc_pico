@@ -182,9 +182,6 @@ HTTP := chrome
 # Use Cpu Upload path (webkit)
 TARGET_FORCE_CPU_UPLOAD := true
 
-# Skip building external/chromium_org
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := true
-
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
 BOARD_FM_DEVICE := bcm4330

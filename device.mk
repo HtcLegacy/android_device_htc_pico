@@ -5,16 +5,16 @@ TARGET_SCREEN_WIDTH  := 480
 DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 
 # Inherit some common cyanogenmod stuff.
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+$(call inherit-product, vendor/aokp/config/common_mini_phone.mk)
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/htc/pico/pico.mk)
+$(call inherit-product, device/htc/pico/full_pico.mk)
 
 PRODUCT_RELEASE_NAME := Explorer
 
 # Product name
-PRODUCT_NAME := cm_pico
+PRODUCT_NAME := aokp_pico
 PRODUCT_BRAND := HTC
 PRODUCT_DEVICE := pico
 PRODUCT_MODEL := Explorer A310e
