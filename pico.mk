@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
 # Other
 PRODUCT_PACKAGES += \
     dexpreopt \
-    lights.pico \
+    lights.msm7x27a \
     gps.msm7x27a \
     librpc \
     power.msm7x27a \
