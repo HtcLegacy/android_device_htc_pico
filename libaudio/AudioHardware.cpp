@@ -237,7 +237,7 @@ mDirectOutrefCnt(0)
         }
         else ALOGE("Could not retrieve number of MSM SND endpoints.");
 
-        int AUTO_VOLUME_ENABLED = 0; // setting disabled as default
+        int AUTO_VOLUME_ENABLED = 1; // setting disabled as default
 
         static const char *const path = "/system/etc/AutoVolumeControl.txt";
         int txtfd;
@@ -1649,9 +1649,9 @@ status_t AudioHardware::setVoiceVolume(float v)
         v = 1.0;
     }
 
-    int vol = lrint(v * 7.0);
+    int vol = lrint(v * 5.0);
     ALOGD("setVoiceVolume(%f)\n", v);
-    ALOGI("Setting in-call volume to %d (available range is 0 to 7)\n", vol);
+    ALOGI("Setting in-call volume to %d (available range is 0 to 5)\n", vol);
 
     if ((mCurSndDevice != -1) && ((mCurSndDevice == SND_DEVICE_TTY_HEADSET) || (mCurSndDevice == SND_DEVICE_TTY_VCO)))
     {
