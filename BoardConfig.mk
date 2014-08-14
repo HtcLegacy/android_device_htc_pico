@@ -18,8 +18,8 @@ BOARD_VENDOR := htc
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/pico/include
 
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CFLAGS += -mfloat-abi=softfp -mfpu=neon-vfpv4 -mtune=cortex-a5
+TARGET_GLOBAL_CPPFLAGS += -mfloat-abi=softfp -mfpu=neon-vfpv4 -mtune=cortex-a5
 COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_OMX
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
@@ -38,7 +38,9 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := cortex-a9
+TARGET_CPU_VARIANT := cortex-a5
+TARGET_ARCH_VARIANT_CPU := cortex-a5
+TARGET_ARCH_VARIANT_FPU := neon-vfpv4
 ARCH_ARM_HAVE_ARMV7A := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_VFP := true
@@ -50,10 +52,6 @@ TARGET_BOOTLOADER_BOARD_NAME := pico
 ARCH_ARM_HIGH_OPTIMIZATION := true
 ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true
 TARGET_USE_O3 := true
-
-# cortex-a9 is used to take advantage of NEON optimizations
-TARGET_ARCH_VARIANT_CPU := cortex-a9
-TARGET_ARCH_VARIANT_FPU := neon
 
 # Optimisations used by Qualcomm
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
