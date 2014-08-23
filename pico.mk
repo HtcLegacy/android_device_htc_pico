@@ -61,7 +61,6 @@ PRODUCT_PACKAGES += \
 
 # Video decoding
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
     libstagefrighthw \
     libOmxCore \
     libdashplayer
