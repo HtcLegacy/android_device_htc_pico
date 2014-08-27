@@ -87,7 +87,7 @@ static audio_policy_dev_state_t ap_get_device_connection_state(
 static void ap_set_phone_state(struct audio_policy *pol, audio_mode_t state)
 {
     struct qcom_audio_policy *qap = to_qap(pol);
-    qap->apm->setPhoneState(state);
+    qap->apm->setPhoneState((int) state);
 }
 
     /* indicate a change in ringer mode */
@@ -138,7 +138,7 @@ static audio_io_handle_t ap_get_output(struct audio_policy *pol,
                                        audio_format_t format,
                                        audio_channel_mask_t channelMask,
                                        audio_output_flags_t flags,
-                                       const audio_offload_info_t *offloadInfo)
+                                       const audio_offload_info_t *info)
 {
     struct qcom_audio_policy *qap = to_qap(pol);
 
@@ -146,7 +146,7 @@ static audio_io_handle_t ap_get_output(struct audio_policy *pol,
     return qap->apm->getOutput((AudioSystem::stream_type)stream,
                                sampling_rate, format, channelMask,
                                (AudioSystem::output_flags)flags,
-                               offloadInfo);
+                               info);
 }
 
 static int ap_start_output(struct audio_policy *pol, audio_io_handle_t output,
@@ -323,6 +323,12 @@ static int ap_dump(const struct audio_policy *pol, int fd)
     return qap->apm->dump(fd);
 }
 
+static bool ap_is_offload_supported(const struct audio_policy *pol, const audio_offload_info_t *info)
+{
+    const struct qcom_audio_policy *qap = to_cqap(pol);
+    return qap->apm->isOffloadSupported(*info);
+}
+
 static int create_qcom_ap(const struct audio_policy_device *device,
                             struct audio_policy_service_ops *aps_ops,
                             void *service,
@@ -370,6 +376,7 @@ static int create_qcom_ap(const struct audio_policy_device *device,
     qap->policy.is_stream_active_remotely = ap_is_stream_active_remotely;
     qap->policy.is_source_active = ap_is_source_active;
     qap->policy.dump = ap_dump;
+    qap->policy.is_offload_supported = ap_is_offload_supported;
 
     qap->service = service;
     qap->aps_ops = aps_ops;
