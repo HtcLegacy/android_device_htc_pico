@@ -1131,7 +1131,12 @@ status_t AudioPolicyManager::startInput(audio_io_handle_t input)
     param.addInt(String8(AudioParameter::keyInputSource), (int)inputDesc->mInputSource);
 
     // use Voice Recognition mode or not for this input based on input source
-    int vr_enabled = inputDesc->mInputSource == AUDIO_SOURCE_VOICE_RECOGNITION ? 1 : 0;
+    int vr_enabled = 0;
+
+    if(inputDesc->mInputSource == AUDIO_SOURCE_VOICE_RECOGNITION ||
+    inputDesc->mInputSource == AUDIO_SOURCE_HOTWORD)
+        vr_enabled = 1;
+
     param.addInt(String8("vr_mode"), vr_enabled);
     ALOGV("AudioPolicyManager::startInput(%d), setting vr_mode to %d", inputDesc->mInputSource, vr_enabled);
 
