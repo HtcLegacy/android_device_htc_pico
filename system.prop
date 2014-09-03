@@ -135,3 +135,4 @@ persist.webview.provider=classic
 persist.sys.scrollingcache=4
 pm.sleep_mode=1
 power.saving.mode=1
+ro.ksm.default=1
