@@ -125,7 +125,23 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
     vendor/htc/pico/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
     vendor/htc/pico/proprietary/lib/libmmparser_divxdrmlib.so:system/lib/libmmparser_divxdrmlib.so \
-    vendor/htc/pico/proprietary/lib/libdivxdrmdecrypt.so:system/lib/libdivxdrmdecrypt.so
+    vendor/htc/pico/proprietary/lib/libdivxdrmdecrypt.so:system/lib/libdivxdrmdecrypt.so \
+    vendor/htc/pico/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
+    vendor/htc/pico/proprietary/lib/libOmxAc3HwDec.so:system/lib/libOmxAc3HwDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
+    vendor/htc/pico/proprietary/lib/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
+    vendor/htc/pico/proprietary/lib/libOmxEvrcHwDec.so:system/lib/libOmxEvrcHwDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
+    vendor/htc/pico/proprietary/lib/libOmxQcelp13Dec.so:system/lib/libOmxQcelp13Dec.so \
+    vendor/htc/pico/proprietary/lib/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
+    vendor/htc/pico/proprietary/lib/libOmxQcelpHwDec.so:system/lib/libOmxQcelpHwDec.so \
+    vendor/htc/pico/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so
     
 # Set usb type
 ADDITIONAL_DEFAULT_PROPERTIES += \
