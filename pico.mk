@@ -40,7 +40,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio_policy.conf \
-    libaudioutils
+    libaudioutils \
+    libaudio-resampler
 
 # Other
 PRODUCT_PACKAGES += \
