@@ -91,9 +91,9 @@
             <Quirk name="requires-wma-pro-component" />
         </MediaCodec>
 
-        <MediaCodec name="OMX.qcom.audio.decoder.aac" type="audio/mp4a-latm" >
+<!--        <MediaCodec name="OMX.qcom.audio.decoder.aac" type="audio/mp4a-latm" >
             <Quirk name="requires-global-flush" />
-        </MediaCodec>
+        </MediaCodec> -->
         <!-- Audio Software  -->
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.gsm.decoder" type="audio/gsm" />
