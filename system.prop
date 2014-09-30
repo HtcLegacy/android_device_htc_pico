@@ -110,8 +110,9 @@ media.stagefright.enable-meta=false
 
 # Dalvik
 ro.zram.default=0
-ro.sys.fw.bg_apps_limit=4
+ro.sys.fw.bg_apps_limit=7
 sys.mem.max_hidden_apps=7
+ro.config.max_starting_bg=7
 dalvik.vm.checkjni=false
 dalvik.vm.dexopt-data-only=1
 dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
