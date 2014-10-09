@@ -197,10 +197,10 @@ on fs
     setprop ro.ril.fd.scron.timeout 4
     setprop ro.ril.fd.scroff.timeout 3
 
-    # Configure and enable KSM
-    write /sys/kernel/mm/ksm/pages_to_scan 600
-    write /sys/kernel/mm/ksm/sleep_millisecs 3000
-    write /sys/kernel/mm/ksm/run 1
+    # Configure UKSM
+    chown root system /sys/kernel/mm/uksm/sleep_millisecs
+    chmod 0664 /sys/kernel/mm/uksm/sleep_millisecs
+    write /sys/kernel/mm/uksm/sleep_millisecs 500
 
 #service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --no2bytes --tosleep=50000 --enable_hci --baudrate 4000000 --patchram /system/etc/firmware/BCM4330B1_002.001.003.0221.0228.hcd --scopcm=0,0,0,0,0,0,0,3,3,0 /dev/ttyHS0
 #    user root
