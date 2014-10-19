@@ -231,8 +231,8 @@ PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/bin/logcat2:system/bin/logcat2 \
 
 # DeviceSettings
-PRODUCT_PACKAGES += \
-    DeviceSettings
+# PRODUCT_PACKAGES += \
+#     DeviceSettings
 
 #Int2Ext
 PRODUCT_COPY_FILES += \
