@@ -162,6 +162,9 @@ ENABLE_JSC_JIT := true
 JS_ENGINE := v8
 HTTP := chrome
 
+# ART
+MALLOC_IMPL := dlmalloc
+
 # Use Cpu Upload path (webkit)
 TARGET_FORCE_CPU_UPLOAD := true
 
