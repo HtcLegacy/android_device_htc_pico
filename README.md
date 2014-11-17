@@ -1,4 +1,4 @@
-CM11 device tree for HTC Explorer
+CM12 device tree for HTC Explorer
 ===================================
 
 Cyanogenmod Device tree for HTC Explorer A310e
