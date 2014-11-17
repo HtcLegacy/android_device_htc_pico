@@ -185,6 +185,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Fonts
 #SMALLER_FONT_FOOTPRINT := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 # Power
 TARGET_PROVIDES_POWERHAL := true
 
