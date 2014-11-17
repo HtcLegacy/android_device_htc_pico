@@ -1,0 +1,69 @@
+commit 365b133362021bf42e7095720d008153894314b3
+Author: kirmaniarslan <arslankirmani9600@gmail.com>
+Date:   Mon Nov 17 11:58:08 2014 +0100
+
+    Fix release tool error
+
+diff --git a/core/Makefile b/core/Makefile
+index 00d1082..8ff2093 100644
+--- a/core/Makefile
++++ b/core/Makefile
+@@ -1568,6 +1568,12 @@ INTERNAL_OTA_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
+ 
+ $(INTERNAL_OTA_PACKAGE_TARGET): KEY_CERT_PAIR := $(DEFAULT_KEY_CERT_PAIR)
+ 
++ifneq ($(TARGET_OTA_USE_BLOCKMODE),true)
++     $(INTERNAL_OTA_PACKAGE_TARGET): blockmode := false
++ else
++     $(INTERNAL_OTA_PACKAGE_TARGET): blockmode := true
++endif	 
++
+ ifeq ($(TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT),)
+     OTA_FROM_TARGET_SCRIPT := ./build/tools/releasetools/ota_from_target_files
+ else
+@@ -1596,7 +1602,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
+ 	@echo -e ${CL_YLW}"Package OTA:"${CL_RST}" $@"
+ 	$(hide) MKBOOTIMG=$(MKBOOTIMG) \
+ 	   $(OTA_FROM_TARGET_SCRIPT) -v \
+-	   --block \
++	   --block=$(blockmode) \
+ 	   -p $(HOST_OUT) \
+ 	   -k $(KEY_CERT_PAIR) \
+ 	   --backup=$(backuptool) \
+diff --git a/tools/releasetools/ota_from_target_files b/tools/releasetools/ota_from_target_files
+index c5b6437..28bc0da 100755
+--- a/tools/releasetools/ota_from_target_files
++++ b/tools/releasetools/ota_from_target_files
+@@ -65,10 +65,11 @@ Usage:  ota_from_target_files [flags] input_target_files output_ota_package
+       first, so that any changes made to the system partition are done
+       using the new recovery (new kernel, etc.).
+ 
+-  --block
++  --block <boolean>
+       Generate a block-based OTA if possible.  Will fall back to a
+       file-based OTA if the target_files is older and doesn't support
+       block-based OTAs.
++	  Disabled by default
+ 
+   -b  (--binary)  <file>
+       Use the given binary as the update-binary in the output package,
+@@ -1455,8 +1456,8 @@ def main(argv):
+       OPTIONS.no_signing = True
+     elif o in ("--verify"):
+       OPTIONS.verify = True
+-    elif o == "--block":
+-      OPTIONS.block_based = True
++    elif o in ("--block"):
++      OPTIONS.block_based = bool(a.lower() == 'true')
+     elif o in ("-b", "--binary"):
+       OPTIONS.updater_binary = a
+     elif o in ("--no_fallback_to_full",):
+@@ -1481,7 +1482,7 @@ def main(argv):
+                                               "aslr_mode=",
+                                               "two_step",
+                                               "no_signing",
+-                                              "block",
++                                              "block=",
+                                               "binary=",
+                                               "oem_settings=",
+                                               "verify",
