@@ -68,7 +68,7 @@ using android::Condition;
 #define MBADRC_ENABLE  0x0010
 #define MBADRC_DISABLE 0xFFEF
 #define SRS_ENABLE 0x0020
-#define SRS_DISABLE 0xFFDF
+#define SRS_DISABLE 0x0040
 #define LPA_BUFFER_SIZE 512*1024
 #define BUFFER_COUNT 2
 
@@ -216,6 +216,15 @@ public:
                                 uint32_t *channels=0,
                                 uint32_t *sampleRate=0,
                                 status_t *status=0);
+
+    virtual AudioStreamOut* openOutputStreamWithFlags(
+                                uint32_t devices,
+                                audio_output_flags_t flags=(audio_output_flags_t)0,
+                                int *format=0,
+                                uint32_t *channels=0,
+                                uint32_t *sampleRate=0,
+                                status_t *status=0);
+
     virtual AudioStreamIn* openInputStream(
 
                                 uint32_t devices,

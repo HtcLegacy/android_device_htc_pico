@@ -301,10 +301,12 @@ status_t AudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
                 } else if (audio_is_bluetooth_sco_device(device)) {
                     // handle SCO device connection
                     mScoDeviceAddress = String8(device_address, MAX_DEVICE_ADDRESS_LEN);
+#if 0
                 } else if (audio_is_usb_device(device)) {
                     // handle USB device connection
                     mUsbCardAndDevice = String8(device_address, MAX_DEVICE_ADDRESS_LEN);
                     paramStr = mUsbCardAndDevice;
+#endif
                 }
                 // not currently handling multiple simultaneous submixes: ignoring remote submix
                 //   case and address
@@ -339,6 +341,7 @@ status_t AudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
             } else if (audio_is_bluetooth_sco_device(device)) {
                 // handle SCO device disconnection
                 mScoDeviceAddress = "";
+#if 0
             } else if (audio_is_usb_device(device)) {
                 // handle USB device disconnection
                 mUsbCardAndDevice = "";
@@ -346,6 +349,7 @@ status_t AudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
                 AudioParameter param;
                 param.add(String8("usb_connected"), String8("false"));
                 mpClientInterface->setParameters(0, param.toString());
+#endif
             }
             // not currently handling multiple simultaneous submixes: ignoring remote submix
             //   case and address
@@ -498,11 +502,13 @@ AudioSystem::device_connection_state AudioPolicyManager::getDeviceConnectionStat
                 address != "" && mScoDeviceAddress != address) {
                 return state;
             }
+#if 0
             if (audio_is_usb_device(device) &&
                 ((address != "" && mUsbCardAndDevice != address))) {
                 ALOGE("getDeviceConnectionState() invalid device: %x", device);
                 return state;
             }
+#endif
             if (audio_is_remote_submix_device((audio_devices_t)device) && !mHasRemoteSubmix) {
                 return state;
             }
@@ -1018,8 +1024,8 @@ status_t AudioPolicyManager::stopOutput(audio_io_handle_t output,
 
 audio_io_handle_t AudioPolicyManager::getInput(int inputSource,
                                     uint32_t samplingRate,
-                                    uint32_t format,
-                                    uint32_t channelMask,
+                                    audio_format_t format,
+                                    audio_channel_mask_t channelMask,
                                     AudioSystem::audio_in_acoustics acoustics)
 {
     audio_io_handle_t input = 0;
@@ -1919,8 +1925,10 @@ AudioPolicyManager::device_category AudioPolicyManager::getDeviceCategory(audio_
             return DEVICE_CATEGORY_EARPIECE;
         case AUDIO_DEVICE_OUT_WIRED_HEADSET:
         case AUDIO_DEVICE_OUT_WIRED_HEADPHONE:
+#ifdef QCOM_ANC_HEADSET_ENABLED
         case AUDIO_DEVICE_OUT_ANC_HEADSET:
         case AUDIO_DEVICE_OUT_ANC_HEADPHONE:
+#endif
         case AUDIO_DEVICE_OUT_BLUETOOTH_SCO:
         case AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET:
         case AUDIO_DEVICE_OUT_BLUETOOTH_A2DP:
