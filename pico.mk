@@ -77,6 +77,12 @@ PRODUCT_PACKAGES += \
 # Build sim toolkit
 PRODUCT_PACKAGES += \
     Stk
+	
+# WiFi
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    hostapd \
+    wpa_supplicant		
     
 # Hardware properties 
 PRODUCT_COPY_FILES += \
