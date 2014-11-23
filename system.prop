@@ -10,7 +10,7 @@ ro.ril.hsdpa.category=8
 ro.ril.fast.dormancy.rule=1
 ril.subscription.types=NV,RUIM
 ro.telephony.ril_class=HTCQualcommRIL
-ro.telephony.ril.v3=datacallapn,signalstrength
+ro.telephony.ril=datacallapn,signalstrength
 ro.telephony.default_network = 0
 DEVICE_PROVISIONED=1
 
