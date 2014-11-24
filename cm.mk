@@ -2,9 +2,6 @@
 TARGET_SCREEN_HEIGHT := 320
 TARGET_SCREEN_WIDTH  := 480
 
-# Include GSM stuff
-$(call inherit-product, vendor/cm/config/gsm.mk)
-
 DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 
 # Inherit some common cyanogenmod stuff.
