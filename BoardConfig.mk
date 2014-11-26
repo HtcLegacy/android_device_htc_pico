@@ -152,7 +152,7 @@ TARGET_RECOVERY_FSTAB := device/htc/pico/recovery.fstab
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/htc/pico/ril
+#BOARD_RIL_CLASS := ../../../device/htc/pico/ril
 BOARD_USES_LEGACY_RIL := true
 BOARD_RIL_FIVE_SEARCH_RESPONSES :=true
 
