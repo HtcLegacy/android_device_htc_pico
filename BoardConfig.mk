@@ -1,4 +1,4 @@
-# Copyright (C) 2011 The Android Open Source Project
+;# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -149,12 +149,6 @@ TARGET_USES_ION := true
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/htc/pico/recovery.fstab
-
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-#BOARD_RIL_CLASS := ../../../device/htc/pico/ril
-BOARD_USES_LEGACY_RIL := true
-BOARD_RIL_FIVE_SEARCH_RESPONSES :=true
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
