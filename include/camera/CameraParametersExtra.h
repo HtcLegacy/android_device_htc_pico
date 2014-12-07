@@ -286,7 +286,7 @@ void CameraParameters::getTouchIndexAf(int *x, int *y) const \
         *x = tempX; \
         *y = tempY; \
     } \
-} \
+};
 
 #define CAMERA_PARAMETERS_EXTRA_H \
 struct FPSRange{ \
@@ -471,5 +471,5 @@ struct FPSRange{ \
     void setPreviewFpsRange(int minFPS,int maxFPS); \
     void setPostviewSize(int x, int y); \
     void getSupportedHfrSizes(Vector<Size> &sizes) const; \
-    void getMeteringAreaCenter(int * x, int *y) const; \
+    void getMeteringAreaCenter(int * x, int *y) const;
 
