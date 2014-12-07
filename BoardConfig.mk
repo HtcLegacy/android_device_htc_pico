@@ -130,6 +130,9 @@ COMMON_GLOBAL_CFLAGS += -DHTCLOG
 # LOGD
 TARGET_USES_LOGD := false
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # GPS
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
