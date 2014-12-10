@@ -289,6 +289,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.mobiledata=false \
     ro.com.android.dataroaming=false
 
+# Newer camera API isn't supported.
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1	
+
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
