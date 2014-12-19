@@ -188,6 +188,9 @@ ifeq ($(HOST_OS),linux)
 endif
 DONT_DEXPREOPT_PREBUILTS := true
 
+# RIL
+BOARD_RIL_CLASS := ../../../device/htc/pico/ril
+
 # Use Cpu Upload path (webkit)
 TARGET_FORCE_CPU_UPLOAD := true
 
