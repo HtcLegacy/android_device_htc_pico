@@ -13,10 +13,11 @@
 # limitations under the License.
 #
 
+LOCAL_PATH := device/htc/pico
 USE_CAMERA_STUB := true
 BOARD_VENDOR := htc
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/pico/include
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 TARGET_GLOBAL_CFLAGS += -mfloat-abi=softfp -mfpu=neon-vfpv4 -mtune=cortex-a5
 TARGET_GLOBAL_CPPFLAGS += -mfloat-abi=softfp -mfpu=neon-vfpv4 -mtune=cortex-a5
@@ -100,11 +101,11 @@ BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/pico/bluetooth/vnd_pico.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/pico/bluetooth/include
+BOARD_BLUEDROID_VENDOR_CONF := $(LOCAL_PATH)/bluetooth/vnd_pico.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth/include
 
 # OpenGL drivers config file path
-BOARD_EGL_CFG := device/htc/pico/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/prebuilt/lib/egl/egl.cfg
 
 # Wifi related definitions
 TARGET_NO_WIFI_HAL := true
@@ -160,7 +161,7 @@ TARGET_USES_ION := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/htc/pico/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
@@ -189,7 +190,7 @@ endif
 DONT_DEXPREOPT_PREBUILTS := true
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/htc/pico/ril
+BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
 # Use Cpu Upload path (webkit)
 TARGET_FORCE_CPU_UPLOAD := true
