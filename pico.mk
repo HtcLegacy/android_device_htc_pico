@@ -284,6 +284,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.mobiledata=false \
     ro.com.android.dataroaming=false
 
+# Disable atlas services on low-ram targets
+PRODUCT_PROPERTY_OVERRIDES += \
+    config.disable_atlas=true	
+
 # Newer camera API isn't supported.
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1	
