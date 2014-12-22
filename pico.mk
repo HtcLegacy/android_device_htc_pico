@@ -16,7 +16,6 @@
 # Inherit from those products. Most specific first
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 # Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
@@ -281,6 +280,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.purgeable_assets=1 \
     ro.telephony.call_ring.delay=3000 \
     ro.config.low_ram=true \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=64m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=2m \
     ro.com.android.mobiledata=false \
     ro.com.android.dataroaming=false
 
@@ -291,7 +296,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Newer camera API isn't supported.
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1	
-	
+
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
