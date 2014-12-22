@@ -13,22 +13,6 @@ ro.telephony.ril_class=HtcMsm7x27aRIL
 ro.telephony.default_network = 0
 DEVICE_PROVISIONED=1
 
-# For PDP overlap problem
-ro.ril.avoid.pdp.overlap = 1
-
-#For NITZ power saving mode
-ro.ril.enable.nitz = 3
-
-# For the agps default value
-ro.ril.def.agps.mode = 2
-
-# For HSDPA low throughput
-ro.ril.disable.power.collapse = 1
-
-# Modify MTU from 1500 to 1472 on 3G network
-ro.ril.set.mtusize = 1472
-ro.ril.set.mtu1472 = 1
-
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
 # but none are in range.
@@ -49,12 +33,6 @@ view.scroll_friction = 0.008
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 ro.opengles.version = 131072
-
-# For no auto focus devices
-ro.workaround.noautofocus = 1
-
-# Increase SKIA decode memory capability for progressive jpg file
-ro.media.dec.jpeg.memcap = 20000000
 
 # For QC perf binary hooks
 # src:vendor/qcom/proprietary/android-perf/release/lib/<CPU arch>/libqc-opt.so
@@ -109,18 +87,17 @@ media.stagefright.enable-meta=false
 media.stagefright.use-awesome=true
 persist.sys.media.use-awesome=true
 
-# Dalvik
+# Memory
 ro.ksm.default=1
 ro.zram.default=0
 ro.sys.fw.bg_apps_limit=7
 sys.mem.max_hidden_apps=7
 ro.config.max_starting_bg=4
-dalvik.vm.checkjni=false
+
+# Dalvik
+dalvik.vm.checkjni=0
+dalvik.vm.debug.alloc=0 
 dalvik.vm.dexopt-data-only=1
-dalvik.vm.execution-mode=int:jit
-dalvik.vm.verify-bytecode=false
-dalvik.vm.lockprof.threshold=500
-dalvik.vm.debug.alloc=0
 
 # Misc
 ro.use_data_netmgrd=true
@@ -133,9 +110,5 @@ ro.android.secure=0
 ro.fuse_sdcard=true
 persist.sys.strictmode.visual=0
 persist.sys.strictmode.disable=1
-persist.webview.provider=classic
 persist.sys.scrollingcache=4
-pm.sleep_mode=1
 power.saving.mode=1
-ro.ksm.default=1
-persist.sys.force_highendgfx=true
