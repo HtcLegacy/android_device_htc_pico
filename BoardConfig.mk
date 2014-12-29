@@ -108,7 +108,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth/include
 BOARD_EGL_CFG := $(LOCAL_PATH)/prebuilt/lib/egl/egl.cfg
 
 # Wifi related definitions
-TARGET_NO_WIFI_HAL := true
 BOARD_HOSTAPD_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
