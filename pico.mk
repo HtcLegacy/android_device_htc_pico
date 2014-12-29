@@ -113,6 +113,7 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.pico:root/fstab.pico \
+	$(LOCAL_PATH)/ramdisk/recovery/twrp.fstab:root/etc/twrp.fstab \
     $(LOCAL_PATH)/ramdisk/init.pico.rc:root/init.pico.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.pico.rc:root/ueventd.pico.rc \
     $(LOCAL_PATH)/ramdisk/init.pico.usb.rc:root/init.pico.usb.rc

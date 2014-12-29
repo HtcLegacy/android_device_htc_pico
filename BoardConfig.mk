@@ -215,8 +215,15 @@ USE_MINIKIN := true
 # Power
 TARGET_PROVIDES_POWERHAL := true
 
+RECOVERY_VARIANT := omni
+
 # TWRP
+ifeq ($(RECOVERY_VARIANT),omni)
 DEVICE_RESOLUTION := 320x480
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_NEVER_UMOUNT_SYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+TW_TARGET_USES_QCOM_BSP := true
+TARGET_RECOVERY_INITRC := device/htc/pico/ramdisk/recovery/init.rc
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/pico/ramdisk/recovery/customrecoveryimg.mk
+endif
