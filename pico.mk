@@ -25,6 +25,8 @@ $(call inherit-product-if-exists, vendor/htc/pico/vendor_pico.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+PRODUCT_BOOT_JARS += qcmediaplayer
+
 # Graphics 
 PRODUCT_PACKAGES += \
     copybit.msm7x27a \
@@ -68,10 +70,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     libOmxCore \
-    libdashplayer \
-	qcmediaplayer
+    libdashplayer
 
-PRODUCT_BOOT_JARS += \
+# qcmediaplayer
+PRODUCT_PACKAGES += \
     qcmediaplayer	
 
 # Bluetooh
@@ -161,20 +163,10 @@ PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/prebuilt/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
 #    $(LOCAL_PATH)/prebuilt/lib/libaudioalsa.so:system/lib/libaudioalsa.so
 
-# Sensors
-PRODUCT_COPY_FILES += \
-    vendor/htc/pico/proprietary/lib/hw/sensors.pico.so:system/lib/hw/sensors.pico.so
-
 # 3D(AU_LINUX_ANDROID_KK_2.7_RB1.04.04.00.007.018)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     $(LOCAL_PATH)/prebuilt/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
-    
-# RIL
-PRODUCT_COPY_FILES += \
-    vendor/htc/pico/proprietary/lib/libhtc_ril.so:system/lib/libhtc_ril.so \
-    vendor/htc/pico/proprietary/lib/libqc-opt.so:system/lib/libqc-opt.so \
-    vendor/htc/pico/proprietary/bin/qmuxd:system/bin/qmuxd
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
