@@ -3,16 +3,6 @@
 # system.prop for pico
 #
 
-# Telephony
-rild.libpath=/system/lib/libhtc_ril.so
-rild.libargs=-d /dev/smd0
-ro.ril.hsdpa.category=8
-ro.ril.fast.dormancy.rule=1
-ril.subscription.types=NV,RUIM
-ro.telephony.ril_class=HtcMsm7x27aRIL
-ro.telephony.default_network = 0
-DEVICE_PROVISIONED=1
-
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
 # but none are in range.
@@ -75,8 +65,6 @@ media.stagefright.enable-fma2dp=true
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-meta=false
-media.stagefright.use-awesome=true
-persist.sys.media.use-awesome=true
 
 # Memory
 ro.ksm.default=1
