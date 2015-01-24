@@ -140,3 +140,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/idc/pico-keypad.idc:system/usr/idc/pico-keypad.idc \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
+	
+# HTCLEGACY Updater
+PRODUCT_PACKAGES += \
+	HLUpdater
+
+ifeq ($(TARGET_UNOFFICIAL_BUILD_ID),)
+PRODUCT_PROPERTY_OVERRIDES += ro.hl.releasetype=NIGHTLY
+else
+PRODUCT_PROPERTY_OVERRIDES += ro.hl.releasetype=SNAPSHOT
+endif	
