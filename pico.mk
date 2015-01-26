@@ -60,6 +60,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.pico.rc:root/init.pico.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.pico.rc:root/ueventd.pico.rc \
     $(LOCAL_PATH)/ramdisk/init.pico.usb.rc:root/init.pico.usb.rc
+	
+# TWRP
+ifeq ($(RECOVERY_VARIANT),omni)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/recovery/twrp.fstab:root/etc/twrp.fstab
+endif	
     
 # Camera
 PRODUCT_COPY_FILES += \
