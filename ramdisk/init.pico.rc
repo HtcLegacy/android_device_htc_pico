@@ -169,6 +169,8 @@ on boot
     insmod /system/lib/modules/kineto_gan.ko
 
 on fs
+    # sd cache
+    write /sys/devices/virtual/bdi/179:0/read_ahead_kb 1024
     # mount partitions
     mount_all /fstab.pico
     # zRAM 
