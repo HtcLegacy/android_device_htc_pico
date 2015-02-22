@@ -94,7 +94,6 @@ PRODUCT_COPY_FILES += \
     
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     $(LOCAL_PATH)/prebuilt/etc/AudioBTID.csv:system/etc/AudioBTID.csv \
     $(LOCAL_PATH)/prebuilt/etc/AudioPara4.csv:system/etc/AudioPara4.csv \
