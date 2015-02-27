@@ -191,6 +191,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Fonts
 #SMALLER_FONT_FOOTPRINT := true
 
+# Odex
+WITH_DEXPREOPT := true
+
 # Power
 TARGET_PROVIDES_POWERHAL := true
 
