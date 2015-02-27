@@ -73,6 +73,13 @@ PRODUCT_PACKAGES += \
 # Build sim toolkit
 PRODUCT_PACKAGES += \
     Stk
+
+# F2FS
+PRODUCT_PACKAGES += \
+    mkfs.f2fs \
+    fsck.f2fs \
+    make_f2fs \
+    mkf2fsuserimg.sh 
     
 # Hardware properties 
 PRODUCT_COPY_FILES += \
