@@ -17,6 +17,8 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
 # Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 
@@ -242,7 +244,7 @@ PRODUCT_COPY_FILES += \
 #     DeviceSettings
 
 #Int2Ext
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/etc/40int2ext:system/etc/40int2ext
 
 # Keylayouts
@@ -265,17 +267,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     ro.telephony.call_ring.multiple=false \
-    ro.vold.umsdirtyratio=50 \
+    ro.vold.umsdirtyratio=20 \
     persist.sys.purgeable_assets=1 \
     ro.telephony.call_ring.delay=3000 \
     ro.config.low_ram=true \
-    dalvik.vm.heapstartsize=5m \
-    dalvik.vm.heapgrowthlimit=48m \
-    dalvik.vm.heapsize=64m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=2m \
     ro.com.android.mobiledata=false \
+    ro.tethering.kb_disconnect=1 \
     ro.com.android.dataroaming=false
 
 PRODUCT_AAPT_CONFIG := normal mdpi

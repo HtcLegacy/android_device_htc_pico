@@ -69,24 +69,15 @@ htc.audio.alc.enable = 1
 htc.audio.swalt.enable = 1
 
 # Display
-ro.hw_plat=7x27a
-debug.composition.type=dyn
-debug.composition.7x25a.type=dyn
 debug.sf.hw=1
 debug.egl.hw=1
+debug.composition.type=dyn
 persist.hwc.mdpcomp.enable=false
+debug.mdpcomp.maxlayer=3
 debug.mdpcomp.logs=0
-ro.max.fling_velocity=4000
-com.qc.hdmi_out=false
-debug.gr.numframebuffers=3
-debug.qc.hardware=true
-debug.enabletr=false
-debug.hwc.dynThreshold=1.91
-debug.fb.rgb565=0
-ro.zygote.disable_gl_preload=true
-debug.egl.recordable.rgba8888=1
 debug.gralloc.map_fb_memory=1
 debug.hwc.fakevsync=1
+com.qc.hdmi_out=false
 
 # Video Acceleration
 video.accelerate.hw=1
@@ -110,29 +101,25 @@ media.stagefright.enable-meta=false
 
 # Dalvik
 ro.zram.default=0
-ro.sys.fw.bg_apps_limit=7
+persist.sys.purgeable_assets=1
+ro.sys.fw.bg_apps_limit=12
 sys.mem.max_hidden_apps=7
-ro.config.max_starting_bg=7
-dalvik.vm.checkjni=false
-dalvik.vm.dexopt-data-only=1
-dalvik.vm.execution-mode=int:jit
-dalvik.vm.verify-bytecode=false
-dalvik.vm.lockprof.threshold=500
-dalvik.vm.debug.alloc=0
+ro.config.max_starting_bg=6
+
+# Radio
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.add_power_save=1
 
 # Misc
 ro.use_data_netmgrd=true
-persist.data.ds_fmc_app.mode=0
 httplive.enable.discontinuity=true
 ro.config.sync=yes
 ro.phone_storage=0
-ro.kernel.android.checkjni=0
 ro.android.secure=0
 ro.fuse_sdcard=true
 persist.sys.strictmode.visual=0
 persist.sys.strictmode.disable=1
 persist.webview.provider=classic
 persist.sys.scrollingcache=4
-pm.sleep_mode=1
 power.saving.mode=1
 ro.ksm.default=1
