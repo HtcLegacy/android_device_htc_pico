@@ -38,7 +38,7 @@ PRODUCT_PACKAGES += \
 	
 # Extra packages 
 PRODUCT_PACKAGES += \
-	Lanucher3  \
+	SlimLauncher  \
 	AudioFX
 
 # Stagefright FFMPEG plugin
@@ -153,10 +153,6 @@ PRODUCT_COPY_FILES += \
 # PRODUCT_PACKAGES += \
 #     DeviceSettings
 
-#Int2Ext
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/40int2ext:system/etc/40int2ext
-
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
@@ -174,6 +170,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 	
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/media/bootanimation.zip:system/media/bootanimation.zip
+   
+# Apn-Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # HTCLEGACY Updater
 PRODUCT_PACKAGES += \
 	HLUpdater
