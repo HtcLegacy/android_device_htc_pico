@@ -43,7 +43,6 @@ persist.hwc.mdpcomp.enable=false
 debug.mdpcomp.maxlayer=3
 debug.mdpcomp.logs=0
 debug.gralloc.map_fb_memory=1
-debug.hwc.fakevsync=1
 com.qc.hdmi_out=false
 
 # Video Acceleration
