@@ -83,9 +83,6 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
-ifeq ($(TARGET_BUILD_VARIANT), eng)
-  BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/customrecoveryimg.mk
-endif
 
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
@@ -103,6 +100,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 RECOVERY_VARIANT :=
 
 ifeq ($(RECOVERY_VARIANT),omni)
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/customrecoveryimg.mk
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_DISABLE_TTF := true
 TW_NEVER_UMOUNT_SYSTEM := true
